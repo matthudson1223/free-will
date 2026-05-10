@@ -14,13 +14,13 @@ struct ContentView: View {
     var body: some View {
         TabView {
             ChatView()
-                .tabItem { Label("Chat", systemImage: "bubble.left.and.bubble.right") }
+                .tabItem { Label("Chat", systemImage: "message") }
             JournalView()
-                .tabItem { Label("Journal", systemImage: "book.closed") }
+                .tabItem { Label("Journal", systemImage: "book.pages") }
             HabitsView()
                 .tabItem { Label("Habits", systemImage: "checkmark.circle") }
             DashboardView()
-                .tabItem { Label("Dashboard", systemImage: "chart.bar") }
+                .tabItem { Label("Dashboard", systemImage: "square.grid.2x2") }
             SettingsView()
                 .tabItem { Label("Settings", systemImage: "gearshape") }
         }

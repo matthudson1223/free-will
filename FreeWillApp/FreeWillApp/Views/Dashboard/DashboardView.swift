@@ -2,29 +2,21 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var vm = DashboardViewModel()
-    @State private var habitsVm = HabitsViewModel()
-
-    private let columns = [GridItem(.flexible()), GridItem(.flexible())]
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 16) {
+                LazyVStack(spacing: 14) {
                     ForEach(vm.goalCards) { card in
                         GoalCardView(card: card)
                     }
                 }
-                .padding()
+                .padding(.horizontal, AppTheme.pagePadding)
+                .padding(.vertical, 8)
             }
             .navigationTitle("Dashboard")
-            .task {
-                await vm.load()
-                await habitsVm.load()
-            }
-            .refreshable {
-                await vm.load()
-                await habitsVm.load()
-            }
+            .task { await vm.load() }
+            .refreshable { await vm.load() }
         }
     }
 }
@@ -33,29 +25,42 @@ struct GoalCardView: View {
     let card: GoalCard
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text(card.icon)
-                    .font(.title2)
-                Text(card.pillar)
-                    .font(.headline)
-                    .lineLimit(1)
-            }
-            Text(card.summary)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-                .lineLimit(3)
-            if !card.measure.isEmpty {
-                Divider()
-                Label(card.measure, systemImage: "ruler")
-                    .font(.caption)
+        HStack(spacing: 0) {
+            RoundedRectangle(cornerRadius: 3)
+                .fill(Color.accentColor)
+                .frame(width: 3)
+                .padding(.vertical, 12)
+
+            VStack(alignment: .leading, spacing: 8) {
+                HStack(spacing: 10) {
+                    Text(card.icon)
+                        .font(.title2)
+                    Text(card.pillar)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                }
+                Text(card.summary)
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(4)
+                    .fixedSize(horizontal: false, vertical: true)
+                if !card.measure.isEmpty {
+                    HStack(spacing: 4) {
+                        Image(systemName: "ruler")
+                            .font(.caption2)
+                        Text(card.measure)
+                            .font(.caption2)
+                            .lineLimit(2)
+                    }
                     .foregroundStyle(.tertiary)
-                    .lineLimit(2)
+                }
             }
+            .padding(.leading, 16)
+            .padding(.trailing, 16)
+            .padding(.vertical, 16)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(.secondarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.cardRadius))
     }
 }

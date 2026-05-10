@@ -7,7 +7,7 @@ struct MessageThreadView: View {
         VStack(spacing: 0) {
             ScrollViewReader { proxy in
                 ScrollView {
-                    LazyVStack(spacing: 12) {
+                    LazyVStack(spacing: 16) {
                         ForEach(vm.messages) { msg in
                             MessageBubble(message: msg)
                                 .id(msg.id)
@@ -20,7 +20,8 @@ struct MessageThreadView: View {
                             .id("streaming")
                         }
                     }
-                    .padding()
+                    .padding(.horizontal, AppTheme.pagePadding)
+                    .padding(.vertical, 12)
                 }
                 .onChange(of: vm.streamingMessage) {
                     withAnimation { proxy.scrollTo("streaming", anchor: .bottom) }

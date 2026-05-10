@@ -8,7 +8,6 @@ struct SettingsView: View {
     @State private var connectionStatus: ConnectionStatus = .idle
     @State private var connectionError: String = ""
     @AppStorage("colorScheme") private var colorSchemeRaw: String = "system"
-    @AppStorage("accentColorHex") private var accentColorHex: String = "007AFF"
 
     @Environment(\.dismiss) private var dismiss
 
@@ -26,12 +25,19 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 Section("Connection") {
-                    TextField("Server URL", text: $serverURL)
-                        .keyboardType(.URL)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                    SecureField("iOS API Key", text: $apiKey)
-                    HStack {
+                    HStack(spacing: 12) {
+                        SettingsIcon(systemImage: "network", color: .blue)
+                        TextField("Server URL", text: $serverURL)
+                            .keyboardType(.URL)
+                            .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
+                    }
+                    HStack(spacing: 12) {
+                        SettingsIcon(systemImage: "key.fill", color: Color(.systemGray))
+                        SecureField("iOS API Key", text: $apiKey)
+                    }
+                    HStack(spacing: 12) {
+                        SettingsIcon(systemImage: "antenna.radiowaves.left.and.right", color: .green)
                         Button("Test connection") { Task { await testConnection() } }
                         Spacer()
                         if connectionStatus != .idle {
@@ -44,20 +50,30 @@ struct SettingsView: View {
                         Text(connectionError)
                             .font(.caption)
                             .foregroundStyle(.red)
+                            .padding(.leading, 40)
                     }
                 }
 
                 Section("Appearance") {
-                    Picker("Theme", selection: $colorSchemeRaw) {
-                        Text("System").tag("system")
-                        Text("Light").tag("light")
-                        Text("Dark").tag("dark")
+                    HStack(spacing: 12) {
+                        SettingsIcon(systemImage: "paintbrush.fill", color: .purple)
+                        Picker("Theme", selection: $colorSchemeRaw) {
+                            Text("System").tag("system")
+                            Text("Light").tag("light")
+                            Text("Dark").tag("dark")
+                        }
                     }
                 }
 
                 Section("About") {
-                    LabeledContent("Version", value: "1.0.9")
-                    LabeledContent("Server", value: serverURL.isEmpty ? "Not set" : serverURL)
+                    HStack(spacing: 12) {
+                        SettingsIcon(systemImage: "info.circle", color: Color(.systemGray))
+                        LabeledContent("Version", value: "1.1.0")
+                    }
+                    HStack(spacing: 12) {
+                        SettingsIcon(systemImage: "server.rack", color: Color(.systemGray2))
+                        LabeledContent("Server", value: serverURL.isEmpty ? "Not set" : serverURL)
+                    }
                 }
             }
             .navigationTitle(isInitialSetup ? "Welcome" : "Settings")
@@ -85,5 +101,18 @@ struct SettingsView: View {
         let (ok, error) = await APIService.shared.checkHealth()
         connectionStatus = ok ? .ok : .fail
         connectionError = error ?? ""
+    }
+}
+
+private struct SettingsIcon: View {
+    let systemImage: String
+    let color: Color
+
+    var body: some View {
+        Image(systemName: systemImage)
+            .font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(.white)
+            .frame(width: 28, height: 28)
+            .background(color, in: RoundedRectangle(cornerRadius: 6))
     }
 }

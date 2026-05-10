@@ -7,16 +7,23 @@ struct MessageBubble: View {
 
     var body: some View {
         HStack(alignment: .bottom, spacing: 8) {
-            if isUser { Spacer(minLength: 48) }
+            if isUser { Spacer(minLength: 60) }
 
-            Text(MarkdownRenderer.render(message.content))
-                .padding(.horizontal, 14)
-                .padding(.vertical, 10)
-                .background(isUser ? Color.accentColor : Color(.secondarySystemBackground))
-                .foregroundStyle(isUser ? .white : .primary)
-                .clipShape(RoundedRectangle(cornerRadius: 18))
+            if isUser {
+                Text(MarkdownRenderer.render(message.content))
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .background(Color.accentColor)
+                    .foregroundStyle(.white)
+                    .clipShape(ChatBubbleShape(isUser: true))
+            } else {
+                Text(MarkdownRenderer.render(message.content))
+                    .padding(.leading, 4)
+                    .foregroundStyle(.primary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
 
-            if !isUser { Spacer(minLength: 48) }
+            if !isUser { Spacer(minLength: 60) }
         }
     }
 }
@@ -25,30 +32,34 @@ struct StreamingBubble: View {
     let text: String
     let toolActivity: String?
 
+    @State private var pulseOpacity: Double = 1
+
     var body: some View {
         HStack(alignment: .bottom, spacing: 8) {
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 8) {
                 if let tool = toolActivity {
                     HStack(spacing: 6) {
-                        ProgressView().scaleEffect(0.7)
+                        Circle()
+                            .fill(Color.accentColor)
+                            .frame(width: 6, height: 6)
+                            .opacity(pulseOpacity)
+                            .animation(.easeInOut(duration: 0.8).repeatForever(autoreverses: true), value: pulseOpacity)
+                            .onAppear { pulseOpacity = 0.2 }
                         Text("Using \(tool)…")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
-                    .padding(.horizontal, 14)
+                    .padding(.horizontal, 12)
                     .padding(.vertical, 6)
-                    .background(Color(.tertiarySystemBackground))
-                    .clipShape(Capsule())
+                    .background(AppTheme.surfaceDeep, in: Capsule())
                 }
                 if !text.isEmpty {
                     Text(MarkdownRenderer.render(text))
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 10)
-                        .background(Color(.secondarySystemBackground))
-                        .clipShape(RoundedRectangle(cornerRadius: 18))
+                        .padding(.leading, 4)
+                        .foregroundStyle(.primary)
                 }
             }
-            Spacer(minLength: 48)
+            Spacer(minLength: 60)
         }
     }
 }

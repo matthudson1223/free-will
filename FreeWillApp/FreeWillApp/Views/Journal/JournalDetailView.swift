@@ -7,16 +7,30 @@ struct JournalDetailView: View {
 
     var body: some View {
         ScrollView {
-            if let content = fullEntry?.content {
-                Text(MarkdownRenderer.render(content))
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            } else {
-                ProgressView()
-                    .padding()
+            VStack(alignment: .leading, spacing: 20) {
+                Text(entry.displayDate)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.top, 8)
+
+                if let content = fullEntry?.content {
+                    Text(MarkdownRenderer.render(content))
+                        .lineSpacing(5)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                } else {
+                    VStack(spacing: 10) {
+                        ProgressView()
+                        Text("Loading entry…")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 40)
+                }
             }
+            .padding(.horizontal, AppTheme.pagePadding)
+            .padding(.bottom, AppTheme.pagePadding)
         }
-        .navigationTitle(entry.displayDate)
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await vm.loadEntry(date: entry.date)
