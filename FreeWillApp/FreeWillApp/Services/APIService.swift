@@ -5,7 +5,7 @@ class APIService: ObservableObject {
     static let shared = APIService()
 
     var serverURL: String { (KeychainService.load("serverURL") ?? "").trimmingCharacters(in: .whitespacesAndNewlines) }
-    var apiKey: String { KeychainService.load("apiKey") ?? "" }
+    var apiKey: String { (KeychainService.load("apiKey") ?? "").trimmingCharacters(in: .whitespacesAndNewlines) }
 
     // MARK: - Generic request
 

@@ -15,6 +15,7 @@ class WebSocketService {
     var toolActivity: String? = nil
 
     private var task: URLSessionWebSocketTask?
+    private var session: URLSession = URLSession(configuration: .default)
     private var receiveLoop: Task<Void, Never>?
     var onEvent: ((WSEvent) -> Void)?
 
@@ -23,10 +24,10 @@ class WebSocketService {
         guard var comps = URLComponents(string: serverURL) else { return }
         comps.scheme = comps.scheme == "https" ? "wss" : "ws"
         comps.path = "/ws/chat/\(conversationId)"
-        comps.queryItems = [URLQueryItem(name: "key", value: apiKey)]
+        comps.queryItems = [URLQueryItem(name: "key", value: apiKey.trimmingCharacters(in: .whitespacesAndNewlines))]
         guard let url = comps.url else { return }
 
-        let session = URLSession(configuration: .default)
+        session = URLSession(configuration: .default)
         task = session.webSocketTask(with: url)
         task?.resume()
         isConnected = true
