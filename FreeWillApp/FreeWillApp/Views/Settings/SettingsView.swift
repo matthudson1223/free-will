@@ -56,7 +56,7 @@ struct SettingsView: View {
                 }
 
                 Section("About") {
-                    LabeledContent("Version", value: "1.0.7")
+                    LabeledContent("Version", value: "1.0.8")
                     LabeledContent("Server", value: serverURL.isEmpty ? "Not set" : serverURL)
                 }
             }
@@ -75,8 +75,8 @@ struct SettingsView: View {
     }
 
     private func save() {
-        KeychainService.save(serverURL, for: "serverURL")
-        KeychainService.save(apiKey, for: "apiKey")
+        KeychainService.save(serverURL.trimmingCharacters(in: .whitespacesAndNewlines), for: "serverURL")
+        KeychainService.save(apiKey.trimmingCharacters(in: .whitespacesAndNewlines), for: "apiKey")
     }
 
     private func testConnection() async {
