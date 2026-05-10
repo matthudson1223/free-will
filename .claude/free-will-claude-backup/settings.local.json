@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo '')",
+      "Bash(echo '# free-will vault')",
+      "Bash(echo \"alias fw-unlock='gocryptfs ~/huckleberry-starfish ~/free-will'\")",
+      "Bash(echo \"alias fw-lock='fusermount -u ~/free-will'\")"
+    ]
+  }
+}

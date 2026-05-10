@@ -1,0 +1,46 @@
+last_updated: 2026-05-09
+
+wake_time: "05:30"
+work_cutoff: "18:00"
+
+weekdays:
+  - block: Morning personal time
+    start: "05:30"
+    end: "06:00"
+    protected: true
+    notes: No work. Reflection, journaling, or quiet — sets the tone for the day.
+
+  - block: Work
+    start: "06:00"
+    end: "18:00"
+    notes: Hard stop at 18:00. No email, Slack, or work tasks after cutoff.
+
+  - block: Evening personal time
+    start: "18:00"
+    end: sleep
+    protected: true
+    notes: Phone out of reach at bedtime. Wind down intentionally.
+
+weekends:
+  saturday:
+    - block: Light work (if needed)
+      start: "06:00"
+      end: "10:00"
+      notes: Optional and bounded. Nothing after 10:00 AM.
+    - block: Personal time
+      start: "10:00"
+      end: sleep
+      protected: true
+
+  sunday:
+    - block: Full personal day
+      start: "05:30"
+      end: sleep
+      protected: true
+      notes: No work. Use for rest, relationships, and weekly review.
+
+boundaries:
+  - No work communications checked after 18:00 on weekdays
+  - No work after 10:00 AM on Saturdays
+  - Sundays are fully protected
+  - Phone stays out of reach at bedtime every night

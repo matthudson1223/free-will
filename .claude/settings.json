@@ -1,0 +1,9 @@
+{
+  "hooks": {},
+  "permissions": {
+    "allow": [
+      "Bash(tailscale status *)",
+      "Bash(tailscale ip *)"
+    ]
+  }
+}

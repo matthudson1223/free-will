@@ -20,7 +20,7 @@ struct ChatInputBar: View {
             Button(action: onSend) {
                 Image(systemName: isStreaming ? "stop.circle.fill" : "arrow.up.circle.fill")
                     .font(.system(size: 32))
-                    .foregroundStyle(text.isEmpty && !isStreaming ? .tertiary : .tint)
+                    .foregroundColor(text.isEmpty && !isStreaming ? .gray : .blue)
             }
             .disabled(text.isEmpty && !isStreaming)
         }

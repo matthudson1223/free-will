@@ -1,0 +1,40 @@
+last_updated: 2026-05-09
+
+goals:
+
+  balance:
+    summary: Establish hard boundaries between work and personal life
+    primary_focus: No work after a set time each evening
+    details:
+      - Define and enforce a daily work stop time (set in schedule.yaml)
+      - Work communications (email, Slack, etc.) do not get checked after cutoff
+      - Violations are noted in the weekly review, not ignored
+    measure: Days per week where the boundary held
+
+  habits:
+    summary: Build consistency around recovery and reflection
+    primary_focus: No phone in bed + daily mindfulness or reflection practice
+    details:
+      - Phone out of reach at bedtime — no exceptions
+      - Daily reflection practice (journal entry, meditation, or structured review)
+      - These two habits are treated as non-negotiable anchors; other habits build around them
+    measure: Streak and weekly completion rate tracked in habits/
+
+  relationships:
+    summary: Actively maintain a medium-sized network across all relationship stages
+    primary_focus: No one important fades due to neglect
+    details:
+      - Track 10–25 people across three tiers (close, good friends, worth maintaining)
+      - Each tier has a defined contact cadence
+      - Proactively build new meaningful connections, not just maintain existing ones
+      - Deepen inner-circle relationships with more intentional time and presence
+    measure: Last-contact date per person; cadence adherence in weekly review
+
+  automation:
+    summary: Reduce mental load from scheduling and tracking
+    primary_focus: Systematize what currently requires repeated manual effort
+    details:
+      - Calendar sync and time-block management via Google Calendar integration
+      - Habit and relationship tracking automated where possible
+      - Weekly review generation pulls from logs, not manual recall
+    measure: Time spent on admin tasks per week (subjective, noted in weekly review)
