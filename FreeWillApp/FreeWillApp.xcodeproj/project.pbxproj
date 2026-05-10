@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA000001 /* FreeWillApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000001 /* FreeWillApp.swift */; };
+		AA000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000002 /* ContentView.swift */; };
+		AA000003 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000003 /* KeychainService.swift */; };
+		AA000004 /* MarkdownRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000004 /* MarkdownRenderer.swift */; };
+		AA000005 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000005 /* APIService.swift */; };
+		AA000006 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000006 /* WebSocketService.swift */; };
+		AA000007 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000007 /* Conversation.swift */; };
+		AA000008 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000008 /* Message.swift */; };
+		AA000009 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000009 /* JournalEntry.swift */; };
+		AA000010 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000010 /* Habit.swift */; };
+		AA000011 /* FileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* FileItem.swift */; };
+		AA000012 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* ChatViewModel.swift */; };
+		AA000013 /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000013 /* JournalViewModel.swift */; };
+		AA000014 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000014 /* HabitsViewModel.swift */; };
+		AA000015 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000015 /* DashboardViewModel.swift */; };
+		AA000016 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000016 /* ChatView.swift */; };
+		AA000017 /* ConversationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000017 /* ConversationListView.swift */; };
+		AA000018 /* MessageThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000018 /* MessageThreadView.swift */; };
+		AA000019 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000019 /* MessageBubble.swift */; };
+		AA000020 /* ChatInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000020 /* ChatInputBar.swift */; };
+		AA000021 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000021 /* JournalView.swift */; };
+		AA000022 /* JournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000022 /* JournalDetailView.swift */; };
+		AA000023 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000023 /* HabitsView.swift */; };
+		AA000024 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000024 /* DashboardView.swift */; };
+		AA000025 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000025 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB000001 /* FreeWillApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeWillApp.swift; sourceTree = "<group>"; };
+		AB000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB000003 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		AB000004 /* MarkdownRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownRenderer.swift; sourceTree = "<group>"; };
+		AB000005 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AB000006 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
+		AB000007 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		AB000008 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		AB000009 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		AB000010 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		AB000011 /* FileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileItem.swift; sourceTree = "<group>"; };
+		AB000012 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		AB000013 /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
+		AB000014 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
+		AB000015 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		AB000016 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		AB000017 /* ConversationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListView.swift; sourceTree = "<group>"; };
+		AB000018 /* MessageThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadView.swift; sourceTree = "<group>"; };
+		AB000019 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		AB000020 /* ChatInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputBar.swift; sourceTree = "<group>"; };
+		AB000021 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		AB000022 /* JournalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailView.swift; sourceTree = "<group>"; };
+		AB000023 /* HabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsView.swift; sourceTree = "<group>"; };
+		AB000024 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		AB000025 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AC000001 /* FreeWillApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeWillApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		MAIN_GROUP = {
+			isa = PBXGroup;
+			children = (
+				APP_GROUP /* FreeWillApp */,
+				PRODUCTS_GROUP /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		PRODUCTS_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AC000001 /* FreeWillApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		APP_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000001 /* FreeWillApp.swift */,
+				AB000002 /* ContentView.swift */,
+				SERVICES_GROUP /* Services */,
+				MODELS_GROUP /* Models */,
+				VIEWMODELS_GROUP /* ViewModels */,
+				VIEWS_GROUP /* Views */,
+			);
+			path = FreeWillApp;
+			sourceTree = "<group>";
+		};
+		SERVICES_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000003 /* KeychainService.swift */,
+				AB000004 /* MarkdownRenderer.swift */,
+				AB000005 /* APIService.swift */,
+				AB000006 /* WebSocketService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		MODELS_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000007 /* Conversation.swift */,
+				AB000008 /* Message.swift */,
+				AB000009 /* JournalEntry.swift */,
+				AB000010 /* Habit.swift */,
+				AB000011 /* FileItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		VIEWMODELS_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000012 /* ChatViewModel.swift */,
+				AB000013 /* JournalViewModel.swift */,
+				AB000014 /* HabitsViewModel.swift */,
+				AB000015 /* DashboardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		VIEWS_GROUP = {
+			isa = PBXGroup;
+			children = (
+				CHAT_GROUP /* Chat */,
+				JOURNAL_GROUP /* Journal */,
+				HABITS_GROUP /* Habits */,
+				DASHBOARD_GROUP /* Dashboard */,
+				SETTINGS_GROUP /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CHAT_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000016 /* ChatView.swift */,
+				AB000017 /* ConversationListView.swift */,
+				AB000018 /* MessageThreadView.swift */,
+				AB000019 /* MessageBubble.swift */,
+				AB000020 /* ChatInputBar.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		JOURNAL_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000021 /* JournalView.swift */,
+				AB000022 /* JournalDetailView.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		HABITS_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000023 /* HabitsView.swift */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
+		DASHBOARD_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000024 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		SETTINGS_GROUP = {
+			isa = PBXGroup;
+			children = (
+				AB000025 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TARGET_ID /* FreeWillApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CONFIG_LIST_TARGET;
+			buildPhases = (
+				SOURCES_PHASE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FreeWillApp;
+			productName = FreeWillApp;
+			productReference = AC000001 /* FreeWillApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJECT_ID /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					TARGET_ID = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = CONFIG_LIST_PROJECT;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = MAIN_GROUP;
+			productRefGroup = PRODUCTS_GROUP /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				TARGET_ID /* FreeWillApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SOURCES_PHASE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000001 /* FreeWillApp.swift in Sources */,
+				AA000002 /* ContentView.swift in Sources */,
+				AA000003 /* KeychainService.swift in Sources */,
+				AA000004 /* MarkdownRenderer.swift in Sources */,
+				AA000005 /* APIService.swift in Sources */,
+				AA000006 /* WebSocketService.swift in Sources */,
+				AA000007 /* Conversation.swift in Sources */,
+				AA000008 /* Message.swift in Sources */,
+				AA000009 /* JournalEntry.swift in Sources */,
+				AA000010 /* Habit.swift in Sources */,
+				AA000011 /* FileItem.swift in Sources */,
+				AA000012 /* ChatViewModel.swift in Sources */,
+				AA000013 /* JournalViewModel.swift in Sources */,
+				AA000014 /* HabitsViewModel.swift in Sources */,
+				AA000015 /* DashboardViewModel.swift in Sources */,
+				AA000016 /* ChatView.swift in Sources */,
+				AA000017 /* ConversationListView.swift in Sources */,
+				AA000018 /* MessageThreadView.swift in Sources */,
+				AA000019 /* MessageBubble.swift in Sources */,
+				AA000020 /* ChatInputBar.swift in Sources */,
+				AA000021 /* JournalView.swift in Sources */,
+				AA000022 /* JournalDetailView.swift in Sources */,
+				AA000023 /* HabitsView.swift in Sources */,
+				AA000024 /* DashboardView.swift in Sources */,
+				AA000025 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CONFIG_DEBUG_PROJECT = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CONFIG_RELEASE_PROJECT = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CONFIG_DEBUG_TARGET = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_IDENTIFIER = com.freewill.app;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freewill.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CONFIG_RELEASE_TARGET = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_IDENTIFIER = com.freewill.app;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freewill.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CONFIG_LIST_PROJECT = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CONFIG_DEBUG_PROJECT /* Debug */,
+				CONFIG_RELEASE_PROJECT /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CONFIG_LIST_TARGET = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CONFIG_DEBUG_TARGET /* Debug */,
+				CONFIG_RELEASE_TARGET /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = PROJECT_ID /* Project object */;
+}
