@@ -4,10 +4,8 @@ import Foundation
 class APIService: ObservableObject {
     static let shared = APIService()
 
-    var serverURL: String { KeychainService.load("serverURL") ?? "" }
+    var serverURL: String { (KeychainService.load("serverURL") ?? "").trimmingCharacters(in: .whitespacesAndNewlines) }
     var apiKey: String { KeychainService.load("apiKey") ?? "" }
-
-    private var base: URL? { URL(string: serverURL) }
 
     // MARK: - Generic request
 
@@ -16,8 +14,10 @@ class APIService: ObservableObject {
         method: String = "GET",
         body: Encodable? = nil
     ) async throws -> T {
-        guard let base else { throw APIError.notConfigured }
-        let url = base.appendingPathComponent(path)
+        let base = serverURL
+        guard !base.isEmpty else { throw APIError.notConfigured }
+        let trimmedBase = base.hasSuffix("/") ? String(base.dropLast()) : base
+        guard let url = URL(string: "\(trimmedBase)/\(path)") else { throw APIError.notConfigured }
         var req = URLRequest(url: url)
         req.httpMethod = method
         req.setValue(apiKey, forHTTPHeaderField: "X-Api-Key")
