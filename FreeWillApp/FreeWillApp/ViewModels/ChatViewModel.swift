@@ -49,7 +49,7 @@ class ChatViewModel {
         Task {
             do {
                 messages = try await api.fetchMessages(conversationId: c.id)
-                ws.connect(
+                await ws.connect(
                     conversationId: c.id,
                     serverURL: api.serverURL,
                     apiKey: api.apiKey
