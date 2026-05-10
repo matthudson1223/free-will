@@ -56,7 +56,7 @@ struct SettingsView: View {
                 }
 
                 Section("About") {
-                    LabeledContent("Version", value: "1.0.0")
+                    LabeledContent("Version", value: "1.0.1")
                     LabeledContent("Server", value: serverURL.isEmpty ? "Not set" : serverURL)
                 }
             }
