@@ -6,6 +6,7 @@ struct SettingsView: View {
     @State private var serverURL: String = KeychainService.load("serverURL") ?? ""
     @State private var apiKey: String = KeychainService.load("apiKey") ?? ""
     @State private var connectionStatus: ConnectionStatus = .idle
+    @State private var connectionError: String = ""
     @AppStorage("colorScheme") private var colorSchemeRaw: String = "system"
     @AppStorage("accentColorHex") private var accentColorHex: String = "007AFF"
 
@@ -38,6 +39,11 @@ struct SettingsView: View {
                                 .foregroundStyle(connectionStatus.color)
                                 .font(.caption)
                         }
+                    }
+                    if !connectionError.isEmpty {
+                        Text(connectionError)
+                            .font(.caption)
+                            .foregroundStyle(.red)
                     }
                 }
 
@@ -76,7 +82,8 @@ struct SettingsView: View {
     private func testConnection() async {
         save()
         connectionStatus = .checking
-        let ok = await APIService.shared.checkHealth()
+        let (ok, error) = await APIService.shared.checkHealth()
         connectionStatus = ok ? .ok : .fail
+        connectionError = error ?? ""
     }
 }

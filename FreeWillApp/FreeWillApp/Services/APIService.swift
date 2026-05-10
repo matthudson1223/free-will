@@ -36,13 +36,14 @@ class APIService: ObservableObject {
 
     // MARK: - Health
 
-    func checkHealth() async -> Bool {
+    func checkHealth() async -> (success: Bool, error: String?) {
         do {
             let _: HealthResponse = try await request("health")
-            return true
+            return (true, nil)
         } catch {
-            print("❌ Health check failed: \(error)")
-            return false
+            let errorMsg = "\(error)"
+            print("❌ Health check failed: \(errorMsg)")
+            return (false, errorMsg)
         }
     }
 

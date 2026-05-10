@@ -45,7 +45,15 @@
       "Bash(python3 -c 'import sys,json; print\\([x[\"name\"] for x in json.load\\(sys.stdin\\)]\\)')",
       "Bash(pkill -f \"uvicorn app.main:app\")",
       "Bash(zip -r FreeWillApp.zip FreeWillApp/)",
-      "Bash(tar -czf FreeWillApp.tar.gz FreeWillApp/)"
+      "Bash(tar -czf FreeWillApp.tar.gz FreeWillApp/)",
+      "Bash(sqlite3 /home/developer/free-will/data/app.db \"SELECT value FROM settings WHERE key='api_key';\")",
+      "Bash(python3)",
+      "Bash(curl -s http://100.76.233.113:8765/health)",
+      "Bash(curl -v http://100.76.233.113:8765/health -H \"X-Api-Key: 2c551584-b5d1-44d3-9dec-321d0ab68112\")",
+      "Bash(curl -v https://situation-saga-storage.ngrok-free.dev/health -H 'X-Api-Key: 2c551584-b5d1-44d3-9dec-321d0ab68112')",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ],
     "additionalDirectories": [
       "/home/developer/free-will/.claude"
