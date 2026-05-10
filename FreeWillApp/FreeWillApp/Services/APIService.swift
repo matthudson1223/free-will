@@ -40,7 +40,10 @@ class APIService: ObservableObject {
         do {
             let _: HealthResponse = try await request("health")
             return true
-        } catch { return false }
+        } catch {
+            print("❌ Health check failed: \(error)")
+            return false
+        }
     }
 
     // MARK: - Conversations
